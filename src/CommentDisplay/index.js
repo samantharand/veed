@@ -5,11 +5,12 @@ export default function CommentDisplay(props) {
 	console.log(props);
 
 	const commentList = props.comments.map(comment => {
+		// const commentDate = new Date(comment.dateAdded)
 		return(
 			<div className='comment' key={comment.id}>
 				<p> {comment.text} </p>
 				<b> {comment.name} </b>
-				<i> {comment.dateAdded.toLocaleString()} </i>
+				<i> {comment.dateAdded} </i>
 			</div>
 		)
 	})

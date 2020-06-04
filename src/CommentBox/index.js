@@ -26,8 +26,12 @@ export default function CommentBox(props) {
 		const url = process.env.REACT_APP_API_URL + '/comments'
 
 		const submitCommentsResponse = await fetch(url, {
+			credentials: 'include',
         	method: 'POST',
-        	body: JSON.stringify(commentInfo), 
+        	body: JSON.stringify(commentInfo),
+			headers: {
+				'Content-Type': 'application/json'
+			}
      	})
 
      	console.log(submitCommentsResponse);
